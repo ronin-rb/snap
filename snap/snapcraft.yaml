@@ -21,6 +21,8 @@ parts:
       - make
       - libreadline-dev
       - libsqlite3-dev
+    override-build: |
+      gem install ronin -v 2.0.5
 
 apps:
   ronin:
