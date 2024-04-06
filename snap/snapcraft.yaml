@@ -1,0 +1,28 @@
+name: ronin
+base: core20
+version: "2.0.5"
+summary: A Ruby platform for vulnerability research and exploit development.
+description: |
+  Ronin is a Ruby platform for vulnerability research and exploit development.
+  Ronin allows for the rapid development and distribution of code, Exploits
+  Payloads, Scanners, etc, via Repositories.
+
+grade: devel
+confinement: devmode
+
+parts:
+  ronin:
+    source: .
+    plugin: ruby
+    gems:
+      - ronin
+    build-packages:
+      - gcc
+      - g++
+      - make
+      - libreadline-dev
+      - libsqlite3-dev
+
+apps:
+  ronin:
+    command: ronin
