@@ -13,9 +13,8 @@ confinement: devmode
 parts:
   ronin:
     source: .
-    plugin: ruby
-    gems:
-      - ronin
+    plugin: nil
+    build-snaps: [ruby]
     build-packages:
       - gcc
       - g++
