@@ -8,3 +8,5 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: snapcore/action-build@v1
+    - run: |
+        sudo snap install --dangerous ${{ steps.build-snap.outputs.snap }}
