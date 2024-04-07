@@ -1,11 +1,15 @@
 name: ronin
 base: core20
 version: "2.0.5"
-summary: A Ruby platform for vulnerability research and exploit development.
+summary: A Ruby toolkit for security research and development.
 description: |
-  Ronin is a Ruby platform for vulnerability research and exploit development.
-  Ronin allows for the rapid development and distribution of code, Exploits
-  Payloads, Scanners, etc, via Repositories.
+  Ronin is a free and Open Source Ruby toolkit for security research and
+  development. Ronin contains many different CLI commands and Ruby libraries for
+  a variety of security tasks, such as encoding/decoding data, filter
+  IPs/hosts/URLs, querying ASNs, querying DNS, HTTP, scanning for web
+  vulnerabilities, spidering websites, install 3rd party repositories of
+  exploits and/or payloads, run exploits, generating new exploits, managing
+  local databases, fuzzing data, and much more.
 license: GPL-3.0+
 source-code: https://github.com/ronin-rb/snap
 issues: https://github.com/ronin-rb/snap/issues
