@@ -38,24 +38,32 @@ apps:
   ronin:
     command: bin/ronin
     adapter: none
+    plugs: [home, network, network-bind, removable-media]
   ronin-db:
     command: bin/ronin-db
     adapter: none
+    plugs: [home, network, network-bind, removable-media]
   ronin-exploits:
     command: bin/ronin-exploits
     adapter: none
+    plugs: [home, network, network-bind, removable-media]
   ronin-fuzzer:
     command: bin/ronin-fuzzer
     adapter: none
+    plugs: [home, network, network-bind, removable-media]
   ronin-payloads:
     command: bin/ronin-payloads
     adapter: none
+    plugs: [home, network, network-bind, removable-media]
   ronin-repos:
     command: bin/ronin-repos
     adapter: none
+    plugs: [home, network, network-bind, removable-media]
   ronin-vulns:
     command: bin/ronin-vulns
     adapter: none
+    plugs: [home, network, network-bind, removable-media]
   wordlist:
     command: bin/wordlist
     adapter: none
+    plugs: [home, network, network-bind, removable-media]
