@@ -28,17 +28,25 @@ parts:
 apps:
   ronin:
     command: bin/ronin
+    adapter: none
   ronin-db:
     command: bin/ronin-db
+    adapter: none
   ronin-exploits:
     command: bin/ronin-exploits
+    adapter: none
   ronin-fuzzer:
     command: bin/ronin-fuzzer
+    adapter: none
   ronin-payloads:
     command: bin/ronin-payloads
+    adapter: none
   ronin-repos:
     command: bin/ronin-repos
+    adapter: none
   ronin-vulns:
     command: bin/ronin-vulns
+    adapter: none
   wordlist:
     command: bin/wordlist
+    adapter: none
