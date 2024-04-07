@@ -28,3 +28,17 @@ parts:
 apps:
   ronin:
     command: bin/ronin
+  ronin-db:
+    command: bin/ronin-db
+  ronin-exploits:
+    command: bin/ronin-exploits
+  ronin-fuzzer:
+    command: bin/ronin-fuzzer
+  ronin-payloads:
+    command: bin/ronin-payloads
+  ronin-repos:
+    command: bin/ronin-repos
+  ronin-vulns:
+    command: bin/ronin-vulns
+  wordlist:
+    command: bin/wordlist
