@@ -7,6 +7,7 @@ description: |
   Ronin allows for the rapid development and distribution of code, Exploits
   Payloads, Scanners, etc, via Repositories.
 license: GPL-3.0+
+issues: https://github.com/ronin-rb/snap/issues
 
 grade: devel
 confinement: devmode
