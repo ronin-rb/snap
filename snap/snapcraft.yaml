@@ -22,8 +22,9 @@ parts:
       - libreadline-dev
       - libsqlite3-dev
     override-build: |
-      gem install ronin -v 2.0.5
+      mkdir "${SNAPCRAFT_PART_INSTALL}/bin"
+      gem install --bindir "${SNAPCRAFT_PART_INSTALL}/bin" ronin -v 2.0.5
 
 apps:
   ronin:
-    command: ronin
+    command: bin/ronin
