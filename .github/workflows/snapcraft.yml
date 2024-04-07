@@ -10,7 +10,7 @@ jobs:
     - uses: snapcore/action-build@v1
       id: build-snap
     - run: |
-        sudo snap install --dangerous ${{ steps.build-snap.outputs.snap }}
+        sudo snap install --devmode --dangerous ${{ steps.build-snap.outputs.snap }}
     - uses: actions/upload-artifact@v3
       with:
         name: ronin.snap
