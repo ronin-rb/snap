@@ -58,7 +58,7 @@ apps:
   ronin-repos:
     command: bin/ronin-repos
     adapter: none
-    plugs: [home, network, network-bind, removable-media]
+    plugs: [home, network, removable-media]
   ronin-vulns:
     command: bin/ronin-vulns
     adapter: none
