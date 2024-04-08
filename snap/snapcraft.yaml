@@ -66,4 +66,4 @@ apps:
   wordlist:
     command: bin/wordlist
     adapter: none
-    plugs: [home, network, network-bind, removable-media]
+    plugs: [home, network, removable-media]
