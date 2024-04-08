@@ -62,7 +62,7 @@ apps:
   ronin-vulns:
     command: bin/ronin-vulns
     adapter: none
-    plugs: [home, network, network-bind, removable-media]
+    plugs: [home, network, removable-media]
   wordlist:
     command: bin/wordlist
     adapter: none
