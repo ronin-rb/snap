@@ -27,7 +27,7 @@ jobs:
         path: .
     - uses: snapcore/action-publish@v1
       env:
-        SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN }}
+        SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
       with:
         snap: ${{needs.build.outputs.snap-file}}
         release: ${{ startsWith(github.ref, 'refs/tags/') && 'candidate' || 'edge'}}
