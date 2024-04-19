@@ -29,5 +29,5 @@ jobs:
       env:
         SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
       with:
-        snap: ${{needs.build.outputs.snap-file}}
+        snap: ronin.snap
         release: ${{ startsWith(github.ref, 'refs/tags/') && 'candidate' || 'edge'}}
