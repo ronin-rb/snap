@@ -16,6 +16,7 @@ website: https://ronin-rb.dev
 source-code: https://github.com/ronin-rb/snap
 issues: https://github.com/ronin-rb/snap/issues
 donation: https://github.com/sponsors/ronin-rb
+icon: snap/gui/ronin.svg
 
 grade: devel
 confinement: devmode
