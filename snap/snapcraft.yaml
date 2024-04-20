@@ -15,6 +15,7 @@ license: GPL-3.0+
 website: https://ronin-rb.dev
 source-code: https://github.com/ronin-rb/snap
 issues: https://github.com/ronin-rb/snap/issues
+donation: https://github.com/sponsors/ronin-rb
 
 grade: devel
 confinement: devmode
