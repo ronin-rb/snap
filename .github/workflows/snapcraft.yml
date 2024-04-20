@@ -5,6 +5,8 @@ on: [ push ]
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      snap-file: ${{ steps.build-snap.outputs.snap }}
     steps:
     - uses: actions/checkout@v4
     - uses: snapcore/action-build@v1
@@ -29,5 +31,5 @@ jobs:
       env:
         SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
       with:
-        snap: ronin.snap
+        snap: ${{ needs.build.outputs.snap-file }}
         release: ${{ startsWith(github.ref, 'refs/tags/') && 'candidate' || 'edge'}}
