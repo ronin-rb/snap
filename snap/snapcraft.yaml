@@ -26,10 +26,14 @@ parts:
     source: .
     plugin: nil
     build-snaps: [ruby]
+    stage-snaps: [ruby]
     build-packages:
       - gcc
       - g++
       - make
+      - libreadline-dev
+      - libsqlite3-dev
+    stage-packages:
       - libreadline-dev
       - libsqlite3-dev
     override-build: |
