@@ -37,7 +37,6 @@ parts:
       - libreadline-dev
       - libsqlite3-dev
     override-build: |
-      mkdir "${SNAPCRAFT_PART_INSTALL}/bin"
       gem install --install-dir "${SNAPCRAFT_PART_INSTALL}" ronin -v "$SNAPCRAFT_PROJECT_VERSION"
 
 apps:
