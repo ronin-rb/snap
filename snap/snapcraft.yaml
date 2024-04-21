@@ -25,15 +25,19 @@ parts:
   ronin:
     source: .
     plugin: nil
-    build-snaps: [ruby]
-    stage-snaps: [ruby]
     build-packages:
+      - ruby
+      - ruby-dev
+      - rubygems
       - gcc
       - g++
       - make
       - libreadline-dev
       - libsqlite3-dev
     stage-packages:
+      - ruby
+      - libruby
+      - rubygems
       - libreadline-dev
       - libsqlite3-dev
     override-build: |
