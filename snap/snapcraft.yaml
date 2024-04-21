@@ -41,6 +41,7 @@ parts:
       - libreadline-dev
       - libsqlite3-dev
       - git
+      - zip
     override-build: |
       gem install ronin -v "$SNAPCRAFT_PROJECT_VERSION"
       mkdir -p "$SNAPCRAFT_PART_INSTALL/var/lib/gems/3.0.0/"
