@@ -37,7 +37,8 @@ parts:
       - libreadline-dev
       - libsqlite3-dev
     override-build: |
-      gem install --install-dir "${SNAPCRAFT_PART_INSTALL}" ronin -v "$SNAPCRAFT_PROJECT_VERSION"
+      bundle package --path "${SNAPCRAFT_PART_INSTALL}"
+      bundle binstubs --standalone --path "${SNAPCRAFT_PART_INSTALL}/bin" ronin ronin-db ronin-exploits ronin-fuzzer ronin-payloads ronin-repos ronin-vulns wordlist
 
 apps:
   ronin:
