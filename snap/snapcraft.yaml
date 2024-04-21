@@ -41,30 +41,33 @@ parts:
       - libreadline-dev
       - libsqlite3-dev
     override-build: |
-      gem install --install-dir "${SNAPCRAFT_PART_INSTALL}" ronin -v "$SNAPCRAFT_PROJECT_VERSION"
+      gem install ronin -v "$SNAPCRAFT_PROJECT_VERSION"
+      mkdir -p "$SNAPCRAFT_PART_INSTALL/var/lib/gems/3.0.0/"
+      cp -R /var/lib/gems/3.0.0/* "$SNAPCRAFT_PART_INSTALL/var/lib/gems/3.0.0/"
+      cp /usr/local/bin/{ronin,ronin-db,ronin-exploits,ronin-fuzzer,ronin-payloads,ronin-repos,ronin-vulns,wordlist} "$SNAPCRAFT_PART_INSTALL/usr/bin/"
 
 apps:
   ronin:
-    command: bin/ronin
+    command: usr/bin/ruby $SNAP/usr/bin/ronin
     plugs: [home, network, network-bind, removable-media]
   ronin-db:
-    command: bin/ronin-db
+    command: usr/bin/ruby $SNAP/usr/bin/ronin-db
     plugs: [home, network, removable-media]
   ronin-exploits:
-    command: bin/ronin-exploits
+    command: usr/bin/ruby $SNAP/usr/bin/ronin-exploits
     plugs: [home, network, network-bind, removable-media]
   ronin-fuzzer:
-    command: bin/ronin-fuzzer
+    command: usr/bin/ruby $SNAP/usr/bin/ronin-fuzzer
     plugs: [home, network, network-bind, removable-media]
   ronin-payloads:
-    command: bin/ronin-payloads
+    command: usr/bin/ruby $SNAP/usr/bin/ronin-payloads
     plugs: [home, network, network-bind, removable-media]
   ronin-repos:
-    command: bin/ronin-repos
+    command: usr/bin/ruby $SNAP/usr/bin/ronin-repos
     plugs: [home, network, removable-media]
   ronin-vulns:
-    command: bin/ronin-vulns
+    command: usr/bin/ruby $SNAP/usr/bin/ronin-vulns
     plugs: [home, network, removable-media]
   wordlist:
-    command: bin/wordlist
+    command: usr/bin/ruby $SNAP/usr/bin/wordlist
     plugs: [home, network, removable-media]
