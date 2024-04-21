@@ -51,6 +51,7 @@ apps:
     plugs: [home, network, network-bind, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin
     environment: &rubyenv
+      HOME: $SNAP_REAL_HOME
       RUBYLIB: "${SNAP}/usr/lib/ruby/vendor_ruby/3.0.0:${SNAP}/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby/3.0.0:${SNAP}/usr/lib/ruby/vendor_ruby:${SNAP}/usr/lib/ruby/3.0.0:${SNAP}/usr/lib/x86_64-linux-gnu/ruby/3.0.0"
       GEM_HOME: "${SNAP}/var/lib/gems/3.0.0"
       GEM_PATH: "${SNAP}/usr/lib/ruby/gems/3.0.0:${SNAP}/usr/share/rubygems-integration/all:${SNAP}/var/lib/gems/3.0.0"
