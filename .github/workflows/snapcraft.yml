@@ -13,6 +13,7 @@ jobs:
       id: build-snap
     - run: |
         sudo snap install --devmode --dangerous ${{ steps.build-snap.outputs.snap }}
+        ronin --help
     - uses: actions/upload-artifact@v3
       with:
         name: ronin.snap
