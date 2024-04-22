@@ -65,6 +65,10 @@ apps:
       MANPATH: "${SNAP}/usr/share/man"
       GROFF_FONT_PATH: "${SNAP}/usr/share/groff/current/font"
       GROFF_TMAC_PATH: "${SNAP}/usr/share/groff/current/tmac"
+      # git env variables
+      GIT_EXEC_PATH: "${SNAP}/usr/lib/git-core"
+      GIT_TEMPLATE_DIR: "${SNAP}/usr/share/git-core/templates"
+      GIT_CONFIG_NOSYSTEM: 1
   ronin-db:
     plugs: [home, network, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-db
