@@ -40,6 +40,7 @@ parts:
       - rubygems
       - libreadline-dev
       - libsqlite3-dev
+      - man-db
       - git
       - zip
     override-build: |
@@ -52,43 +53,50 @@ apps:
   ronin:
     plugs: [home, network, network-bind, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin
-    environment: &rubyenv
+    environment: &appenv
       HOME: $SNAP_REAL_HOME
+      # ruby env variables
       RUBYLIB: "${SNAP}/usr/lib/ruby/vendor_ruby/3.0.0:${SNAP}/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby/3.0.0:${SNAP}/usr/lib/ruby/vendor_ruby:${SNAP}/usr/lib/ruby/3.0.0:${SNAP}/usr/lib/x86_64-linux-gnu/ruby/3.0.0"
       GEM_HOME: "${SNAP}/var/lib/gems/3.0.0"
       GEM_PATH: "${SNAP}/usr/lib/ruby/gems/3.0.0:${SNAP}/usr/share/rubygems-integration/all:${SNAP}/var/lib/gems/3.0.0"
+      # man env variables
+      LD_LIBRARY_PATH: "${SNAP}/lib:${SNAP}/usr/lib:${SNAP}/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}:${SNAP}/usr/lib/man-db"
+      MAN_TEST_DISABLE_SYSTEM_CONFIG: 1
+      MANPATH: "${SNAP}/usr/share/man"
+      GROFF_FONT_PATH: "${SNAP}/usr/share/groff/current/font"
+      GROFF_TMAC_PATH: "${SNAP}/usr/share/groff/current/tmac"
   ronin-db:
     plugs: [home, network, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-db
     environment:
-      <<: *rubyenv
+      <<: *appenv
   ronin-exploits:
     plugs: [home, network, network-bind, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-exploits
     environment:
-      <<: *rubyenv
+      <<: *appenv
   ronin-fuzzer:
     plugs: [home, network, network-bind, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-fuzzer
     environment:
-      <<: *rubyenv
+      <<: *appenv
   ronin-payloads:
     plugs: [home, network, network-bind, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-payloads
     environment:
-      <<: *rubyenv
+      <<: *appenv
   ronin-repos:
     plugs: [home, network, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-repos
     environment:
-      <<: *rubyenv
+      <<: *appenv
   ronin-vulns:
     plugs: [home, network, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-vulns
     environment:
-      <<: *rubyenv
+      <<: *appenv
   wordlist:
     plugs: [home, network, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/wordlist
     environment:
-      <<: *rubyenv
+      <<: *appenv
