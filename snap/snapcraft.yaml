@@ -21,6 +21,10 @@ icon: snap/gui/ronin.svg
 grade: devel
 confinement: strict
 
+architectures:
+  - build-on: [amd64]
+    build-for: [amd64]
+
 parts:
   ronin:
     source: .
