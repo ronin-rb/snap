@@ -107,6 +107,11 @@ apps:
     command: usr/bin/ruby $SNAP/usr/bin/ronin-vulns
     environment:
       <<: *appenv
+  ronin-web:
+    plugs: [home, network, network-bind, removable-media]
+    command: usr/bin/ruby $SNAP/usr/bin/ronin-web
+    environment:
+      <<: *appenv
   wordlist:
     plugs: [home, network, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/wordlist
