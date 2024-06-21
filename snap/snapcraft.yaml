@@ -12,9 +12,8 @@ description: |
   exploits and/or payloads, run exploits, generating new exploits, managing
   local databases, fuzzing data, and much more.
 
-  ```
-  sudo snap install ronin
-  ```
+      sudo snap install ronin
+
 license: GPL-3.0-or-later
 website: https://ronin-rb.dev
 source-code: https://github.com/ronin-rb/snap
