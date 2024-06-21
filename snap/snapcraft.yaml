@@ -18,7 +18,7 @@ issues: https://github.com/ronin-rb/snap/issues
 donation: https://github.com/sponsors/ronin-rb
 icon: snap/gui/ronin.svg
 
-grade: devel
+grade: stable
 confinement: strict
 
 architectures:
