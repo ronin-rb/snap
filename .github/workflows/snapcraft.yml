@@ -33,4 +33,4 @@ jobs:
         SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_TOKEN }}
       with:
         snap: ${{ needs.build.outputs.snap-file }}
-        release: ${{ startsWith(github.ref, 'refs/tags/') && 'candidate' || 'edge'}}
+        release: ${{ startsWith(github.ref, 'refs/tags/') && (((contains(github.ref_name,'rc') || contains(github.ref_name,'pre') || contains(github.ref_name,'beta') || contains(github.ref_name,'alpha')) && 'beta') || 'candidate') || 'edge'}}
