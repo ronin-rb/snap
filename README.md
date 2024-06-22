@@ -63,3 +63,5 @@ sudo snap install ronin
 brew install snap
 snap install ronin
 ```
+
+**Note:** `snap` on macOS is currently [not supported](https://forum.snapcraft.io/t/install-snapcraft-on-macos/9607/10). :(
