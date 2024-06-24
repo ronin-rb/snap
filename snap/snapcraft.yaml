@@ -71,12 +71,12 @@ apps:
     command: usr/bin/ruby $SNAP/usr/bin/ronin
     environment: &appenv
       HOME: $SNAP_REAL_HOME
+      LD_LIBRARY_PATH: "${SNAP}/lib:${SNAP}/lib/${SNAPCRAFT_ARCH_TRIPLET}:${SNAP}/usr/lib:${SNAP}/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}:${SNAP}/usr/lib/man-db"
       # ruby env variables
       RUBYLIB: "${SNAP}/usr/lib/ruby/vendor_ruby/3.2.0:${SNAP}/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby/3.2.0:${SNAP}/usr/lib/ruby/vendor_ruby:${SNAP}/usr/lib/ruby/3.2.0:${SNAP}/usr/lib/x86_64-linux-gnu/ruby/3.2.0"
       GEM_HOME: "${SNAP}/var/lib/gems/3.2.0"
       GEM_PATH: "${SNAP}/usr/lib/ruby/gems/3.2.0:${SNAP}/usr/share/rubygems-integration/all:${SNAP}/var/lib/gems/3.2.0"
       # man env variables
-      LD_LIBRARY_PATH: "${SNAP}/lib:${SNAP}/usr/lib:${SNAP}/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}:${SNAP}/usr/lib/man-db"
       MAN_TEST_DISABLE_SYSTEM_CONFIG: 1
       MANPATH: "${SNAP}/usr/share/man"
       GROFF_FONT_PATH: "${SNAP}/usr/share/groff/current/font"
