@@ -61,17 +61,15 @@ parts:
       - zip
     override-build: |
       gem install ronin -v "$SNAPCRAFT_PROJECT_VERSION"
-      mkdir -p "$SNAPCRAFT_PART_INSTALL/var/lib/gems/3.2.0/"
-      cp -R /var/lib/gems/3.2.0/* "$SNAPCRAFT_PART_INSTALL/var/lib/gems/3.2.0/"
-      cp /usr/local/bin/{ronin,ronin-db,ronin-exploits,ronin-fuzzer,ronin-payloads,ronin-repos,ronin-vulns,wordlist} "$SNAPCRAFT_PART_INSTALL/usr/bin/"
+      mkdir -p "$CRAFT_PART_INSTALL/var/lib/gems/3.2.0/"
+      cp -R /var/lib/gems/3.2.0/* "$CRAFT_PART_INSTALL/var/lib/gems/3.2.0/"
+      cp /usr/local/bin/{ronin,ronin-db,ronin-exploits,ronin-fuzzer,ronin-payloads,ronin-repos,ronin-vulns,wordlist} "$CRAFT_PART_INSTALL/usr/bin/"
 
 apps:
   ronin:
     plugs: [home, network, network-bind, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin
     environment: &appenv
-      HOME: $SNAP_REAL_HOME
-      LD_LIBRARY_PATH: "${SNAP}/lib:${SNAP}/lib/${SNAPCRAFT_ARCH_TRIPLET}:${SNAP}/usr/lib:${SNAP}/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}:${SNAP}/usr/lib/man-db"
       # ruby env variables
       RUBYLIB: "${SNAP}/usr/lib/ruby/vendor_ruby/3.2.0:${SNAP}/usr/lib/x86_64-linux-gnu/ruby/vendor_ruby/3.2.0:${SNAP}/usr/lib/ruby/vendor_ruby:${SNAP}/usr/lib/ruby/3.2.0:${SNAP}/usr/lib/x86_64-linux-gnu/ruby/3.2.0"
       GEM_HOME: "${SNAP}/var/lib/gems/3.2.0"
@@ -88,40 +86,32 @@ apps:
   ronin-db:
     plugs: [home, network, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-db
-    environment:
-      <<: *appenv
+    environment: *appenv
   ronin-exploits:
     plugs: [home, network, network-bind, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-exploits
-    environment:
-      <<: *appenv
+    environment: *appenv
   ronin-fuzzer:
     plugs: [home, network, network-bind, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-fuzzer
-    environment:
-      <<: *appenv
+    environment: *appenv
   ronin-payloads:
     plugs: [home, network, network-bind, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-payloads
-    environment:
-      <<: *appenv
+    environment: *appenv
   ronin-repos:
     plugs: [home, network, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-repos
-    environment:
-      <<: *appenv
+    environment: *appenv
   ronin-vulns:
     plugs: [home, network, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-vulns
-    environment:
-      <<: *appenv
+    environment: *appenv
   ronin-web:
     plugs: [home, network, network-bind, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/ronin-web
-    environment:
-      <<: *appenv
+    environment: *appenv
   wordlist:
     plugs: [home, network, removable-media]
     command: usr/bin/ruby $SNAP/usr/bin/wordlist
-    environment:
-      <<: *appenv
+    environment: *appenv
