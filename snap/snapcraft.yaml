@@ -1,6 +1,6 @@
 name: ronin
 title: Ronin
-base: core22
+base: core24
 version: "2.0.5"
 summary: A Ruby toolkit for security research and development.
 description: |
