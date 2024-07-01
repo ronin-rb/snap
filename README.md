@@ -11,8 +11,8 @@ The official snap image for [Ronin].
 
 ## What is Ronin?
 
-[Ronin][website] is a free and Open Source [Ruby] toolkit for security research
-and development. Ronin contains many different [CLI commands][ronin-synopsis]
+[Ronin][website] is a Free and Open Source [Ruby] Toolkit for Security Research
+and Development. Ronin contains many different [CLI commands][ronin-synopsis]
 and [Ruby libraries][ronin-rb] for a variety of security tasks, such as
 encoding/decoding data, filter IPs/hosts/URLs, querying ASNs, querying DNS,
 HTTP, [scanning for web vulnerabilities][ronin-vulns-synopsis],
